@@ -4,12 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Grocify</title>
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Sora:wght@100..800&display=swap"
       rel="stylesheet"
     />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       .font-sora {
@@ -18,39 +24,182 @@
         font-weight: 100;
         font-style: normal;
       }
+      @keyframes scaleLoop {
+        0%,
+        100% {
+          transform: scale(0.9);
+        }
+        50% {
+          transform: scale(0.99);
+        }
+      }
+
+      .scale-animation {
+        animation: scaleLoop 2s infinite ease-in-out;
+      }
     </style>
   </head>
   <body>
-    <header>
-      <nav class="flex justify-between items-center py-6">
+    <header class="bg-gradient-to-t from-[#EFEBE3] to-white">
+      <nav
+        class="p-6 flex sm:flex justify-between items-center py-6 max-w-7xl mx-auto"
+      >
         <!-- logo -->
-        <img src="c2-assets/logo-header.png" alt="logo" />
+        <div class="flex">
+          <img
+            src="c2-assets/logo-header.png"
+            alt="logo"
+            class="hidden sm:block"
+          />
+          <img src="c2-assets/Group.png" alt="" class="sm:hidden" />
+        </div>
+
         <!-- menu-items -->
         <div>
-          <ul class="flex justify-between space-x-8">
-            <li class="text-xl ">Product</li>
-            <li class="text-xl ">Services</li>
-            <li class="text-xl ">Contact us</li>
+          <ul class="hidden sm:flex justify-between space-x-8">
+            <li class="text-xl">Product</li>
+            <li class="text-xl">Services</li>
+            <li class="text-xl">Contact us</li>
           </ul>
         </div>
         <!-- icons+buttons -->
-        <div>
+        <div class="flex items-center space-x-4">
+          <img
+            src="c2-assets/search-regular-24.png"
+            alt=""
+            class="hidden sm:block"
+          />
+          <img src="c2-assets/Group (1).png" alt="" class="hidden sm:block" />
           <button
-            class="py-2.5 px-7 text-xl text-black border-2 border-[#179800] rounded-lg  bg-white"
+            class="hidden sm:block py-2.5 px-7 text-xl text-black border-2 border-[#179800] rounded-lg bg-white"
           >
             Login
           </button>
-          
+
           <button
-            class="py-2.5 px-7 text-xl text-white rounded-lg  bg-[#179800]"
+            class="hidden sm:block py-2.5 px-7 text-xl text-white rounded-lg bg-[#179800]"
           >
             Register
           </button>
-          
+
+          <img
+            src="c2-assets/bars-3.png"
+            alt=""
+            class="block text-red-700 sm:hidden"
+          />
         </div>
       </nav>
+      <hr class="block border-1 border-[#179800] sm:hidden" />
+      <div class="mt-8 sm:mt-20">
+        <!-- content -->
+        <div class="max-w-[830px] mx-8 sm:mx-auto text-center">
+          <h1 class="text-3xl mb-4 sm:text-6xl font-semibold">
+            Freshness
+            <span class="text-[#179800]"
+              >You Can <br />
+              Count</span
+            >
+            On, Prices You’ll Love!
+          </h1>
+          <p class="text-[#111111] text-base sm:text-xl">
+            Shop your daily essentials at unbeatable prices. From fresh produce
+            to pantry staples, we’ve got you covered every day!
+          </p>
+        </div>
+        <!-- img -->
+        <div class="text-center max-w-3xl mx-auto mt-8">
+          <img
+            src="c2-assets/hero-vegetables.png"
+            alt=""
+            class="w-full scale-animation"
+          />
+        </div>
+      </div>
     </header>
-    <main></main>
+    <main>
+      <section class="max-w-7xl mt-[48px] mx-[12px] sm:mx-auto sm:mt-32">
+        <h3 class="mb-8 font-semibold text-[#179800] text-2xl sm:text-3xl">
+          Services
+        </h3>
+        <div class="grid grid-cols-1 gap-y-[12px] sm:grid-cols-3 gap-x-6">
+          <div
+            class="bg-[#EFEBE3] rounded-lg flex items-center justify-center flex-col text-center p-7 sm:p-8"
+          >
+            <img
+              src="c2-assets/Group (2).png"
+              alt=""
+              class="bg-white rounded-full p-3 mb-4"
+            />
+            <h5 class="p-3 text-xl font-semibold sm:text-2xl">24/7 Services</h5>
+            <p class="text-base text-[#111111] font-light sm:text-lg">
+              Enjoy fresh groceries delivered 24/7 to your doorstep, ensuring
+              quality products and convenience for everyone.
+            </p>
+          </div>
+          <div
+            class="bg-[#EFEBE3] rounded-lg flex items-center justify-center flex-col text-center p-7 sm:p-8"
+          >
+            <img
+              src="c2-assets/delivery.png"
+              alt=""
+              class="bg-white rounded-full p-3 mb-4"
+            />
+            <h5 class="p-3 text-xl font-semibold sm:text-2xl">Fast Delivery</h5>
+            <p class="text- text-[#111111] font-light sm:text-lg">
+              Get your groceries delivered fast! Enjoy convenience, quality
+              products, and exceptional service right at your door.
+            </p>
+          </div>
+          <div
+            class="bg-[#EFEBE3] rounded-lg flex items-center justify-center flex-col text-center p-7 sm:p-8"
+          >
+            <img
+              src="c2-assets/healthy.png"
+              alt=""
+              class="bg-white rounded-full p-3 mb-4"
+            />
+            <h5 class="p-3 text-xl font-semibold sm:text-2xl">
+              Healthy Products
+            </h5>
+            <p class="text-base text-[#111111] font-light sm:text-lg">
+              Discover a variety of healthy products that nourish your body,
+              promoting wellness and a balanced lifestyle.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="max-w-7xl mt-[140px] mx-auto">
+        <h3 class="text-[#179800] mb-[48px] font-semibold text-[24px] sm:text-[36px] ">Arrival & Offers</h3>
+        <div class="sm:flex gap-x-[20px]">
+          <!-- card-1 -->
+          <div class="card1 flex items-center justify-between bg-[#115414] rounded-lg p-[20px] w-full sm:w-[60%]">
+
+            <div class="flex items-center flex-col gap-y-[32px]">
+              <img src="c2-assets/dawat-logo.png" alt="" /> 
+              <button class="rounded-lg bg-[#63B76D] px-[18px] py-[8px] text-white text-[12px]  sm:text-xl sm:px-[40px] sm:py-[15px] ">Cook Exotic Dishes</button>
+             <h3 class="font-bold text-white text-[20px] sm:text-[30px]">UP to 20% OFF</h3>
+            </div>
+            <div>
+              <img src="c2-assets/dawat-mock-up.png" alt="" class="w-full">
+            </div>
+          </div>
+          <!-- card -2 -->
+
+          <div class="card1 flex items-center justify-between bg-[#102861] rounded-lg p-[20px] w-full sm:w-[40%]">
+
+            <div class="flex items-center flex-col gap-y-[32px]">
+              <img src="c2-assets/india-gate-logo.png" alt="" /> 
+              <button class="rounded-lg bg-[#2A4D97] px-[18px] py-[8px] text-white text-[12px] sm:text-xl px-[40px] py-[15px]">World’s No.1 Rice</button>
+             <h3 class="font-bold text-white text-[20px] sm:text-[30px]">UP to 20% OFF</h3>
+            </div>
+            <div>
+              <img src="c2-assets/india-gate-mock-up.png" alt="" class="w-full">
+            </div>
+          </div>
+          
+        </div>
+      </section>
+    </main>
     <footer></footer>
   </body>
 </html>
